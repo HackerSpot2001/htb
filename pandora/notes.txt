@@ -1,0 +1,9 @@
+161 UDP SNMP service on pandora acceptds default community credentials. 
+
+after snmp enum we get creds:
+u:daniel
+p:HotelBabylon23
+
+CVE 2021-4034 confirmed vulnerability 
+| > Having trouble making it work tho
+Need to do an ssh dynamic tunnel to access second site on server

