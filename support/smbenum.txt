@@ -1,0 +1,19 @@
+[*] 10.129.126.10:445     
+- SMB Detected (versions:2, 3) 
+(preferred dialect:SMB 3.1.1) 
+(compression capabilities:LZNT1, Pattern_V1) 
+(encryption capabilities:AES-256-GCM) 
+(signatures:required) 
+(guid:{49d6426f-cd43-440b-a1ea-c1edc56d4b18}) 
+(authentication domain:SUPPORT)
+
+└──╼ $smbclient --no-pass -L //$box
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	ADMIN$          Disk      Remote Admin
+	C$              Disk      Default share
+	IPC$            IPC       Remote IPC
+	NETLOGON        Disk      Logon server share 
+	support-tools   Disk      support staff tools
+	SYSVOL          Disk      Logon server share
