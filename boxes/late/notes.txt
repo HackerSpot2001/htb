@@ -1,0 +1,25 @@
+scan shows ssh and webapp
+
+go to webapp late.htb
+static page with link to images.late.htb
+
+i.l.h converts images to text
+upload image, get results.txt
+the image is scanned and any text on it is returned in
+  a textfile.
+
+Open burp, all I see is a POST of the JPG.
+
+upload php shell with fake extension, get error:
+  Error occured while processing the image: cannot identify image file '/home/svc_acc/app/uploads/zaco.jpg8498'
+
+try double extension, get same error
+you can't do XSS with SVG files, invalid extension
+
+it's an SSTI. The webpage is running Flask with Jinja2.
+Sending an image of {{7*'7'}} gives you 77777 so 
+we have poc that it's vulnerable.
+
+{{ get_flashed_messages.globals.builtins.open("/etc/passwd").read() }} 
+
+^This should give us a copt of the passwd file. 
