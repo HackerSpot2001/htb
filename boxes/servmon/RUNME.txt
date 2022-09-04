@@ -1,0 +1,1 @@
+searchsploit -x windows/local/46802.txt

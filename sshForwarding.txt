@@ -1,0 +1,18 @@
+When you want to forward a port on a machine and you have 
+SSH you run the following:
+
+1.) Pass ~C to place yourself in ssh command mode
+    |> This will drop you out of your current shell
+2.) Pass -L LPORT:IP.ADD.RES.S##:HPORT
+
+This will send a connection from the Listener Port (LPORT)
+through the IP ADDRESS on the Host Port (HPORT)
+
+That's all there is to it. If you reach out through the 
+LPORT, you will get a response as if you were the IP:PORT
+you specified. This can be run with Loopback address to make
+a box think you are on localhost making requests on the box.
+If you do this, requesting your loopback address will 
+actually display the content being passed through the SSH
+tunnel as if you were on the localhost of the machine you
+have tunneled.
