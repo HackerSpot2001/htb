@@ -1,1 +1,4 @@
 searchsploit -x windows/local/46802.txt
+
+next you want to serve the nc.exe and evil.bat to the computer.
+Restart shit and listener should run.
