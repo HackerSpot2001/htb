@@ -1,0 +1,12 @@
+Magic @ 10.10.10.185:
+=======================
+
+http (80) and ssh (22)
+Webapp uses php to manage logins
+-> magic.htb/login.php
+
+PHPSESSID used
+passwords over cleartext
+some sort of js ie
+
+you can upload images if you login
