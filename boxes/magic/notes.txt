@@ -10,3 +10,12 @@ passwords over cleartext
 some sort of js ie
 
 you can upload images if you login
+
+SQL INJECTION:
+Site login portal vulnerable to boolean sql injection
+admin:' or 1=1;-- -
+Needs to be run through burp for URL encoding
+
+Magic Bytes:
+appending the top 20 bytes of a jpg to a php shell
+will allow us to upload the shell to the site.
