@@ -1,0 +1,49 @@
+Flight
+===================
+So much shit is open on this box.
+LDAP and DC services, but also a
+web app that isn't on nmap scans
+
+You can null authenticate into rpcclient,
+but some commands are off the table. 
+
+RPCCLIENT Available Commands:
+---------------------------------
+rpcclient $> dsroledominfo
+Machine Role = [5]
+Directory Service is running.
+Domain is in native mode.
+
+rpcclient $> lsaquery
+Domain Name: flight
+Domain Sid: S-1-5-21-4078382237-1492182817-2568127209
+
+rpcclient $> list LSARPC
+Available commands on the LSARPC pipe:
+
+                      lsaquery
+              lookupsids_level                   lookupnames                  lookupnames4
+             lookupnames_level                     enumtrust                     enumprivs
+                   getdispname                    lsaenumsid              lsacreateaccount
+           lsaenumprivsaccount                    lsaaddpriv
+                    lsadelpriv              lsaaddacctrights           lsaremoveacctrights
+            lsalookupprivvalue                lsaquerysecobj          lsaquerytrustdominfo
+    lsaquerytrustdominfobyname     lsaquerytrustdominfobysid            lsasettrustdominfo
+                   querysecret                     setsecret           retrieveprivatedata
+              storeprivatedata                createtrustdom                deletetrustdom
+
+rpcclient $> list SAMR
+Available commands on the SAMR pipe:
+
+                     queryuser                    querygroup               queryusergroups
+              queryuseraliases                 querygroupmem                 queryaliasmem
+                queryaliasinfo                   deletealias                 querydispinfo
+                querydispinfo2                querydispinfo3                  querydominfo
+                createdomalias                samlookupnames                 samlookuprids
+                deletedomgroup                 deletedomuser                samquerysecobj
+                  getdompwinfo               getusrdompwinfo                  lookupdomain
+                     chgpasswd                    chgpasswd2                    chgpasswd3
+                getdispinfoidx                   setuserinfo                  setuserinfo2
+
+SMB is active but there aren't any shares. You can anon into it but you can't actually do anything.
+

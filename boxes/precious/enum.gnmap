@@ -1,0 +1,4 @@
+# Nmap 7.92 scan initiated Tue Nov 29 20:27:25 2022 as: nmap -sC -sV -oA enum 10.129.76.248
+Host: 10.129.76.248 ()	Status: Up
+Host: 10.129.76.248 ()	Ports: 22/open/tcp//ssh//OpenSSH 8.4p1 Debian 5+deb11u1 (protocol 2.0)/, 80/open/tcp//http//nginx 1.18.0/	Ignored State: closed (998)
+# Nmap done at Tue Nov 29 20:27:36 2022 -- 1 IP address (1 host up) scanned in 11.80 seconds
