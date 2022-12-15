@@ -1,0 +1,27 @@
+Web and SSH
+
+SQL injection into login, get admin hash
+cracks slow
+get 'josh' hash, md5
+password in rockyoutxt
+
+subdomain enum, find mattermost
+channels talk about docker on deployment machine
+
+username: jaeger
+password: Sh0ppyBest@pp!
+
+ssh in get user
+can sudo one command as user 'deploy'
+it's a password manager
+
+cat it and you'll see the example password
+sudo -u deploy /home/deploy/password-manager
+username: deploy
+password: Deploying@pp!
+This is both users. No obvious privesc
+so we're tooling
+
+Privesc:
+deploy is in the docker group
+docker is a gtfobin
