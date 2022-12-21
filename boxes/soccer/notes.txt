@@ -1,0 +1,29 @@
+web and ssh
+
+directory enum shows /tiny
+
+tinyfileserver, go to login screen
+
+dfalt creds to enter
+upload shell
+www-data
+
+dig thru nginx files, find subdomain
+soc-player.soccer.htb
+go there, make account, login
+
+ticket checker
+inspect element shows javascript using sqli database
+injectable, blind
+
+pull user from it
+ssh in 
+user.txt
+
+/usr/local/etc/doas.conf
+allows usr to nopass /usr/bin/dstat as root
+
+build custom plugin for dstat and add it to program
+doas -u root /usr/bin/bash --plugin
+bash -p
+root.txt
