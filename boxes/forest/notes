@@ -1,0 +1,21 @@
+Pretty standard windows server
+
+null rpcclient
+
+have users:
+user:[sebastien] rid:[0x479]
+user:[lucinda] rid:[0x47a]
+user:[svc-alfresco] rid:[0x47b]
+user:[andy] rid:[0x47e]
+user:[mark] rid:[0x47f]
+user:[santi] rid:[0x480]
+HealthMailbox accounts in 0x464 - 0x478
+user:[Administrator] rid:[0x1f4]        | This is the Domain Admin
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[DefaultAccount] rid:[0x1f7]
+user:[$331000-VK4ADACQNUCA] rid:[0x463]
+
+group:[Incoming Forest Trust Builders] rid:[0x22d]
+
+Password Length Req: 7 chars no complexity
