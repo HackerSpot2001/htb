@@ -1,6 +1,0 @@
-Scanning shows a possible Domain Controller
-
-Hosting Samba (!!), Kerberos, LDAP, WinRPC
-
-SMB lets you in unauthenticated at the share
-\\10.129.126.10\support-tools
